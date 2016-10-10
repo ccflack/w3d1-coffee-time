@@ -1,27 +1,24 @@
 class Human
   attr_accessor :name,
                 :alertness,
-                :drink_left
+                :drink
 
   def initialize(name, alertness=0)
     self.name = name
     self.alertness = alertness
-    self.drink_left = 0
   end
 
-  def buy(drink)
-    drink = Coffee.new(drink, num_purchased=1)
-    self.drink_left = num_purchased * 1
+  def buy(drink_name)
+    self.drink = drink_name
   end
 
   def drink!
-    self.drink_left -= 0.33
+    drink.current_amount -= 0.33
     self.alertness += 0.33
   end
 
   def has_coffee?
-    drink_left > 0
+    drink.current_amount > 0
   end
 
 end
-  

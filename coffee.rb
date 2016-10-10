@@ -1,19 +1,19 @@
 class Coffee
 
-attr_accessor :name,
-              :amount
+attr_accessor :drink_name,
+              :current_amount
 
-  def initialize(name, amount=1)
-    self.name = name
-    self.amount = amount
+  def initialize(drink_name, amount=1.0)
+    self.drink_name = drink_name
+    self.current_amount = amount
   end
 
   def full?
-    amount == 1
+    self.current_amount == 1.0
   end
 
   def empty?
-    amount <= 0.001
+    self.current_amount <= 0.1
   end
 
 end
