@@ -1,3 +1,6 @@
+require './espresso'
+require './coffee'
+
 class Human
   attr_accessor :name,
                 :alertness,
@@ -13,8 +16,8 @@ class Human
   end
 
   def drink!
-    drink.current_amount -= 0.33
-    self.alertness += 0.33
+    self.alertness += drink.energy
+    drink.drink!
   end
 
   def has_coffee?
@@ -23,7 +26,7 @@ class Human
 
   def needs_coffee?
     drink == nil ||
-    drink.current_amount <= 0
+    drink.sips <= 0
   end
 
 end
