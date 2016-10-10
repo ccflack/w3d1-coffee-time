@@ -3,7 +3,7 @@ class Human
                 :alertness,
                 :drink
 
-  def initialize(name, alertness=0)
+  def initialize(name, alertness=0, drink=0)
     self.name = name
     self.alertness = alertness
   end
@@ -18,7 +18,12 @@ class Human
   end
 
   def has_coffee?
-    drink.current_amount > 0
+    drink
+  end
+
+  def needs_coffee?
+    drink == nil ||
+    drink.current_amount <= 0
   end
 
 end
