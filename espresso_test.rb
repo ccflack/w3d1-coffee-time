@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 
 require './human'
-require './coffee'
 require './espresso'
 
 class EspressoTest <MiniTest::Test

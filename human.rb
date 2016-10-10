@@ -1,4 +1,3 @@
-require './espresso'
 require './coffee'
 
 class Human
